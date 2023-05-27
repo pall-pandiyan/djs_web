@@ -2,10 +2,12 @@
 .venv/
 **/__pycache__/
 
+log/
+pid/
 static_files/
 
 *.log
 *.pyc
 *.py~
 *.sw[mnop]
-
+*.sqlite3
