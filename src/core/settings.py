@@ -125,13 +125,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 """
 # Custom Configuration
 """
+ALLOWED_HOSTS = ['*']
 
 # DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+# FORM_RENDERER = "core.forms.CustomFormRenderer"
 
 INSTALLED_APPS += [
     "apps.accounts",
+    "apps.dashboard",
 ]
 
 # CSRF_TRUSTED_ORIGINS = [
