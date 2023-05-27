@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block meta_description %}
-{% endblock meta_description %}
+{% block meta_description %}{% endblock meta_description %}
 
-{% block meta_keyword %}
-{% endblock meta_keyword %}
+{% block meta_keyword %}{% endblock meta_keyword %}
 
-{% block title %}
-Login
-{% endblock title %}
+{% block title %}Login{% endblock title %}
 
 {% block head %}
 {% endblock head %}
@@ -17,7 +13,7 @@ Login
 {% block body %}
 <form action="" method="POST">
     {% csrf_token %}
-    {{ form.as_div }}
+    {{ form }}
     <input type="submit" value="Login" />
 </form>
 {% endblock body %}
