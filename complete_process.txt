@@ -19,12 +19,15 @@ django-admin startproject core
 # we can rename the generated directory name
 mv core src
 
-# freeze pip requirements once in a while, inside the dependencies folder
-pip freeze > dependencies/requirements.txt
+pip install gunicorn==20.1.0
 
+# Deploy using gunicorn
+gunicorn --chdir /home/rx7/projects/djs_web/src core.wsgi:application --keep-alive 600 --reload --daemon --pid /home/rx7/projects/djs_web/pid/gunicorn.pid --user rx7 --group rx7 --access-logfile /home/rx7/projects/djs_web/log/gunicorn/access.log --error-logfile /home/rx7/projects/djs_web/log/gunicorn/error.log
+
+# freeze pip requirements inside the dependencies folder
+pip freeze > dependencies/requirements.txt
 
 # next let's configure Docker
 vim Dockerfile
 vim docker-compose.yml
 vim .dockerignore
-
