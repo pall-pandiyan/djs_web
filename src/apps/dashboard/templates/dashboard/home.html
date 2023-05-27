@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_description %}
+{% endblock meta_description %}
+
+{% block meta_keyword %}
+{% endblock meta_keyword %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<p>
+  This is home!<br>
+  <a href="{% url 'accounts:logout' %}">Logout</a>
+</p>
+{% endblock body %}
+
+{% block script %}
+{% endblock script %}

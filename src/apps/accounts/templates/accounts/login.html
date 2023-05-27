@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_description %}
+{% endblock meta_description %}
+
+{% block meta_keyword %}
+{% endblock meta_keyword %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <input type="submit" value="Login" />
+</form>
+{% endblock body %}
+
+{% block script %}
+{% endblock script %}

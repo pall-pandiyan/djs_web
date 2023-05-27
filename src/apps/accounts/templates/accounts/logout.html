@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_description %}
+{% endblock meta_description %}
+
+{% block meta_keyword %}
+{% endblock meta_keyword %}
+
+{% block title %}
+Logout
+{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<p>You have been Logged out!<br>
+    <a href="{% url 'accounts:login' %}">Click Here</a> to Login Again!
+</p>
+{% endblock body %}
+
+{% block script %}
+{% endblock script %}
