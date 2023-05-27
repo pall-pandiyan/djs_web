@@ -121,3 +121,21 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+"""
+# Custom Configuration
+"""
+
+# DEBUG = False
+
+ALLOWED_HOSTS = ['*']
+
+INSTALLED_APPS += [
+    "apps.accounts",
+]
+
+# CSRF_TRUSTED_ORIGINS = [
+#    "http://0.0.0.0"
+# ]
+
+STATIC_ROOT = BASE_DIR.parent / 'static_files'
