@@ -7,16 +7,20 @@
     <meta name="description" value="{% block meta_description %}{% endblock meta_description %}" />
     <meta name="keyword" value="{% block meta_keyword %}{% endblock meta_keyword %}" />
     <title>{% block title %}{% endblock title %}</title>
-    {% block head %}{% endblock head %}
-
     <!-- <link rel="shortcut icon" href="{% static 'img/favicon_io/favicon.ico' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon_io/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon_io/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon_io/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'site.webmanifest' %}"> -->
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-5.2.3.css' %}" />
+    {% block head %}{% endblock head %}
 </head>
 <body>
     {% block body %}{% endblock body %}
+
+    <script src="{% static 'js/bootstrap-5.2.3.js' %}"></script>
+    <script src="{% static 'js/jquery-3.7.0.min.js' %}"></script>
     {% block script %}{% endblock script %}
 </body>
 </html>
