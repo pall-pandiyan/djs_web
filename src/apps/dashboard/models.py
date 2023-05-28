@@ -4,6 +4,11 @@ from core.choices import SUBSCRIPTION_LEVEL_CHOICES
 
 
 class DashboardMenu(models.Model):
+    """
+    Model containing dashboard menus, we are using a table to dynamically change the dashboard items.
+
+    Developer: Pall Pandiyan.S
+    """
     name = models.CharField(max_length=30, unique=True, null=False, blank=False)
     order = models.IntegerField(unique=True, null=False, blank=False)
     url = models.CharField(max_length=50, unique=True, null=True, blank=True, default=None)
@@ -16,6 +21,11 @@ class DashboardMenu(models.Model):
 
 
 class DashboardSubMenu(models.Model):
+    """
+    Model containing submenus of DashboardMenu, we are using a table to dynamically change the dashboard items.
+    
+    Developer: Pall Pandiyan.S
+    """
     menu = models.ForeignKey(DashboardMenu, on_delete=models.CASCADE, null=False, blank=False)
     name = models.CharField(max_length=30, unique=True, null=False, blank=False)
     order = models.IntegerField(unique=True, null=False, blank=False)
@@ -29,6 +39,11 @@ class DashboardSubMenu(models.Model):
 
 
 class ProfileMenu(models.Model):
+    """
+    Model containing profile menus, we are using a table to dynamically change the profile items.
+    
+    Developer: Pall Pandiyan.S
+    """
     name = models.CharField(max_length=30, unique=True, null=False, blank=False)
     order = models.IntegerField(unique=True, null=False, blank=False)
     url = models.CharField(max_length=50, unique=True, null=False, blank=False)
