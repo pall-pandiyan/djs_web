@@ -127,6 +127,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 """
 ALLOWED_HOSTS = ['*']
 
+# AUTH_USER_MODEL = "accounts.Profile"
+
 # DEBUG = False
 
 # FORM_RENDERER = "core.forms.CustomFormRenderer"
