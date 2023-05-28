@@ -14,6 +14,9 @@ class DashboardMenu(models.Model):
     url = models.CharField(max_length=50, unique=True, null=True, blank=True, default=None)
     subscription_level = models.IntegerField(choices=SUBSCRIPTION_LEVEL_CHOICES, null=False, blank=False, default=0)
 
+    def __str__(self):
+        return self.name
+    
     class Meta:
         ordering = ['order']
         verbose_name = 'Dashboard Menu'
@@ -32,6 +35,9 @@ class DashboardSubMenu(models.Model):
     url = models.CharField(max_length=50, unique=True, null=False, blank=False)
     subscription_level = models.IntegerField(choices=SUBSCRIPTION_LEVEL_CHOICES, null=False, blank=False, default=0)
 
+    def __str__(self):
+        return self.name
+    
     class Meta:
         ordering = ['order']
         verbose_name = 'Dashboard Submenu'
@@ -49,6 +55,9 @@ class ProfileMenu(models.Model):
     url = models.CharField(max_length=50, unique=True, null=False, blank=False)
     subscription_level = models.IntegerField(choices=SUBSCRIPTION_LEVEL_CHOICES, null=False, blank=False, default=0)
 
+    def __str__(self):
+        return self.name
+    
     class Meta:
         ordering = ['order']
         verbose_name = 'Profile Menu'

@@ -13,6 +13,14 @@ class UserConfig(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     subscription_level = models.IntegerField(choices=choices.SUBSCRIPTION_LEVEL_CHOICES, null=False, blank=False, default=0)
 
+    def __str__(self):
+        return self.user.username
+    
+    class Meta:
+        ordering = ['id']
+        verbose_name = 'User Configuration'
+        verbose_name_plural = 'User Configuration'
+
 
 class SubscriptionConfig(models.Model):
     """
@@ -24,6 +32,9 @@ class SubscriptionConfig(models.Model):
     amount = models.DecimalField(max_digits=7, decimal_places=2)
     currency = models.CharField(choices=choices.CURRENCY_CHOICES, default='INR', max_length=3, null=False, blank=False)
 
+    def __str__(self):
+        return self.get_subscription_level_display()
+    
     class Meta:
         ordering = ['subscription_level']
         verbose_name = 'Subscription Configuration'
