@@ -22,7 +22,7 @@ mv core src
 pip install gunicorn==20.1.0
 
 # Deploy using gunicorn
-gunicorn --chdir /home/rx7/projects/djs_web/src core.wsgi:application --keep-alive 600 --reload --daemon --pid /home/rx7/projects/djs_web/pid/gunicorn.pid --user rx7 --group rx7 --access-logfile /home/rx7/projects/djs_web/log/gunicorn/access.log --error-logfile /home/rx7/projects/djs_web/log/gunicorn/error.log
+gunicorn --chdir src core.wsgi:application --keep-alive 600 --pid pid/gunicorn.pid --user rx7 --group rx7 --access-logfile log/gunicorn/access.log --error-logfile log/gunicorn/error.log --reload --daemon
 
 # freeze pip requirements inside the dependencies folder
 pip freeze > dependencies/requirements.txt

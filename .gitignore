@@ -6,6 +6,7 @@ log/
 pid/
 static_files/
 
+*.env
 *.log
 *.pyc
 *.py~
